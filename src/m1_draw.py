@@ -80,7 +80,7 @@ def test_draw_a_picture():
 #   The is_prime function is supplied.  Do NOT change is_prime
 #     """
 ###############################################################################
-# TODO: 1  READ the doc-string for the is_prime function defined below.
+# DONE: 1  READ the doc-string for the is_prime function defined below.
 # You do NOT need to understand its implementations,
 # just its specification (per the doc-string).
 # You should  ** CALL **  functions as needed in implementing the
@@ -127,7 +127,32 @@ def is_prime(n):
 #
 #
 #
+
+
 def draw_a_picture(point, n, color, window):
+    center = rg.Point(point.x, point.y)
+    circle = rg.Circle(center, 100)
+    circle.attach_to(window)
+    corner1 = rg.Point(point.x - 80, point.y - 40)
+    corner2 = rg.Point(point.x + 80, point.y + 40)
+    rectangle = rg.Rectangle(corner1, corner2)
+    rectangle.attach_to(window)
+    window.render(0.5)
+    start = center
+    end = rg.Point(corner2.x, corner2.y - 80)
+    # I had no idea how to make the lines, I didn't know how to make them different colors or how to get them to start
+    # and end in the right spot.
+    for k in range(1, n + 1):
+        end.x = end.x - ((1 / n) * 160)
+        end.y = corner1.y
+        end = rg.Point(end.x, end.y)
+        line = rg.Line(start, end)
+        line.color = color
+        line.attach_to(window)
+        window.render(0.5)
+        if is_prime(k) is True:
+            line.color = 'orange'
+
 
     pass
 
