@@ -89,10 +89,6 @@ class Bank(object):
     #   Put your code for withdraw below
     #
     # ---------------------------------------------------------------------
-        if amount is >= balance:
-            return('ERROR')
-        if amount is < balance:
-            return balance
 
 
 def run_test_init():
@@ -115,32 +111,10 @@ def run_test_init():
         print_failure_message()
     print()
     # ---------------------------------------------------------------------
-    # DONE: 2. Add two more test cases for your Bank class below.
+    # TODO: 2. Add two more test cases for your Bank class below.
     # ---------------------------------------------------------------------
-    b2 = Bank('Dalton', 19191919, 'A191919')
-    expected_name = 'Dalton'
-    expected_balance = 19191919
-    expected_account_number = 'A191919'
-    print("Expected:", expected_name, expected_balance, expected_account_number)
-    print("Actual:  ", b2.name, b2.balance, b2.account_number)
-    if (expected_name == b2.name) and (expected_balance == b2.balance) and (
-            expected_account_number == b2.account_number):
-        print("Test passed SUCCESSFULLY!")
-    else:
-        print_failure_message()
-    print()
-    b3 = Bank('Rose', 50000, 'A5')
-    expected_name = 'Rose'
-    expected_balance = 50000
-    expected_account_number = 'A5'
-    print("Expected:", expected_name, expected_balance, expected_account_number)
-    print("Actual:  ", b3.name, b3.balance, b3.account_number)
-    if (expected_name == b3.name) and (expected_balance == b3.balance) and (
-            expected_account_number == b3.account_number):
-        print("Test passed SUCCESSFULLY!")
-    else:
-        print_failure_message()
-    print()
+
+
 # ---------------------------------------------------------------------
 # TODO: 3. Implement your test for the withdraw method below
 # ---------------------------------------------------------------------
